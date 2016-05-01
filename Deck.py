@@ -1,9 +1,12 @@
 import random
-class Deck:
+from Player import Player
+#making Deck a subclass of Player
+class Deck(Player):
     #TODO make any instance of deck instantiate with an instance of Hand
-    def __init__(self, name, allcards):
+    #TODO import battle system from previous project
+    def __init__(self, name, cardlist):
         self.name = name
-        self.allcards = allcards
+        self.cardlist = cardlist
        # self.hand = Hand()
 
     def addcard(self, card):
@@ -12,7 +15,7 @@ class Deck:
     def trashcard(self, card_name, **args):
         deleted_count = 0
 
-        for idx, card in enumerate(self.allcards):
+        for idx, card in enumerate(self.cardlist):
             if args.get('count') is not 'all' and deleted_count >= args.get('count'): break
             if card.name is card_name:
                 self.allcards.pop(idx)
@@ -21,16 +24,16 @@ class Deck:
         return 'You trashed ' + str(deleted_count) + ' copies of ' + card_name
 
     def shuffledeck(self):
-        random.shuffle(allcards)
+        random.shuffle(cardlist)
         return 'Your deck has been shuffled.'
 
     def changedeckname(self, newname):
         self.name = newname
 
-    def print_deck(self):
-        print('{}, {} cards'.format(self.name, len(self.allcards)))
-        for card in self.allcards:
+    def printdeck(self):
+        print('{}, {} cards'.format(self.name, len(self.cardlist)))
+        for card in self.cardlist:
             print('*', card.name, '\n', card.flavortext)
 
-    def count_cards(self):
-        return "You have %s cards in deck %s" % (len(self.allcards), self.name)
+    def countdeck(self):
+        return "You have {} cards in deck {}".format(len(self.cardlist), self.name)

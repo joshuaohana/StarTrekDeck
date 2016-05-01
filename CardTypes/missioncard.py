@@ -1,0 +1,2 @@
+class Missioncard:
+    def addpoints:

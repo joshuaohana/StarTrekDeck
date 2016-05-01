@@ -9,20 +9,24 @@
 # If you find some time, I would appreciate any feedback. Thanks again.
 
 
-from Deck import Deck
-from Hand import Hand
-from Card import Card
 import card_data
+from Deck import Deck
+from Player import Player
 
 
-
-print(card_data.cards['JeanLucPicard'].flavortext)
-NicksDeck = Deck('Nick\'s Badass Mothafuckin Deck', [card_data.cards['Duras'], card_data.cards['JeanLucPicard']])
+print(card_data.cards['Jean Luc Picard'].flavortext)
+NicksDeck = Deck('Nick\'s Badass Mothafuckin Deck', [card_data.cards['Duras'], card_data.cards['Jean Luc Picard'], card_data.cards['Commander'], card_data.cards['Wesley Crusher'],
+            card_data.cards['Warp Speed'], card_data.cards['Fire All Weapons'], card_data.cards['Commander'], card_data.cards['William Riker']
+            ,card_data.cards['Lieutenant'],card_data.cards['Ensign']])
 # NicksDeck.changedeckname('Nick\'s REALLY Badass Mothafuckin Deck')
 
 # NicksDeck.print_deck()
 
-print(NicksDeck.count_cards())
+print(NicksDeck.countdeck())
+#TODO create a working instance of Player
+# Nick = Player(NicksDeck,)
+
+
 # NicksDeck.addcard(Ensign)
 # print(NicksDeck.count_cards())
 # # fuck that ensign he sucks
