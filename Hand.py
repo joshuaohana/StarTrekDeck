@@ -11,9 +11,10 @@ class Hand(Deck):
             Deck.cardlist[i] = self.currenthand[i]
             Deck.cardlist.del[i]
             i+=1
-
     def drawcard(self,card):
-        self.drawcard.append()
+        currenthand.append(card)
+    def discardhand(self):
+        Discardpile.currentdiscard.append(currenthand)
     def calculatestats:
         for card in Player.Hand:
             cardstats=[0,0,0,0]
