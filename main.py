@@ -10,20 +10,19 @@
 
 
 import card_data
-from Deck import Deck
-from Player import Player
+import Deck
 
+
+
+NicksDeck = Deck.Deck('Nick\'s Badass Mothafuckin Deck',[card_data.cards['Duras'], card_data.cards['Jean Luc Picard'], card_data.cards['Commander'], card_data.cards['Wesley Crusher'],
+            card_data.cards['Warp Speed'], card_data.cards['Fire All Weapons'], card_data.cards['Commander'], card_data.cards['William Riker'],card_data.cards['Lieutenant'],card_data.cards['Ensign']])
 
 print(card_data.cards['Jean Luc Picard'].flavortext)
-NicksDeck = Deck('Nick\'s Badass Mothafuckin Deck', [card_data.cards['Duras'], card_data.cards['Jean Luc Picard'], card_data.cards['Commander'], card_data.cards['Wesley Crusher'],
-            card_data.cards['Warp Speed'], card_data.cards['Fire All Weapons'], card_data.cards['Commander'], card_data.cards['William Riker']
-            ,card_data.cards['Lieutenant'],card_data.cards['Ensign']])
-# NicksDeck.changedeckname('Nick\'s REALLY Badass Mothafuckin Deck')
-
-# NicksDeck.print_deck()
-
+NicksDeck.changedeckname('Nick\'s REALLY Badass Mothafuckin Deck')
+NicksDeck.printdeck()
 print(NicksDeck.countdeck())
 #TODO create a working instance of Player
+
 # Nick = Player(NicksDeck,)
 
 
