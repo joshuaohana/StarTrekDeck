@@ -12,14 +12,7 @@ class Deck(Player):
     def addcard(self, card):
         self.allcards.append(card)
 
-    def trashcard(self, card_name, **args):
-        deleted_count = 0
 
-        for idx, card in enumerate(self.cardlist):
-            if args.get('count') is not 'all' and deleted_count >= args.get('count'): break
-            if card.name is card_name:
-                self.allcards.pop(idx)
-                deleted_count += 1
 
         return 'You trashed ' + str(deleted_count) + ' copies of ' + card_name
 
