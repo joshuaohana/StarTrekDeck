@@ -1,8 +1,10 @@
 class Player:
-    def __init__(self, deck, hand, playername):
+    def __init__(self, playername, deck, hand, discardpile, shipcard):
+        self.playername = playername
         self.deck = deck
         self.hand = hand
-        self.playername = playername
+        self.discardpile = discardpile
+        self.shipcard = shipcard
     # def battlestats:
     #     sum(self.Hand.['1'],self.Card['2'],self.card['3']
     # def playcard:

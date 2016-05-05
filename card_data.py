@@ -1,4 +1,3 @@
-# TODO put this shit into a dictionary
 
 import CardTypes
 print(CardTypes)
