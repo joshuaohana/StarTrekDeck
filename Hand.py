@@ -1,5 +1,5 @@
 
-from Deck import Deck
+from CardTypes.shipcard import shipcard
 class Hand:
     def __init__(self,name, deck, shipcard):
         self.name = name
@@ -13,17 +13,15 @@ class Hand:
 #TODO make __str__ not as messy when it prints
     def calcstats(self):
         cardstats=[0,0,0,0]
+        cardstats[0] += shipcard.speed
+        cardstats[1] += shipcard.attack
+        cardstats[2] += shipcard.diplomacy
+        cardstats[3] += shipcard.shields
         for card in self.currenthand:
             cardstats[0] += card.speed
             cardstats[1] += card.attack
             cardstats[2] += card.diplomacy
             cardstats[3] += card.shields
-        #TODO this vvv doesn't make sense, make shipcard work before you make this work
-        for stat in self.shipcard:
-            cardstats[0] += shipcard.speed
-            cardstats[1] += shipcard.attack
-            cardstats[2] += shipcard.diplomacy
-            cardstats[3] += shipcard.shields
         print(cardstats)
 
 #is this no longer relevant? Maybe?

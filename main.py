@@ -1,11 +1,11 @@
-
-# from random import shuffle
-
+#TODO wade through all these fuckin errors, including the Card to Shipcard module error -- clean this shit up
 import card_data
 from Deck import Deck
 from Hand import Hand
-import shipcard
-from shipcard import shipcard
+from CardTypes.shipcard import shipcard
+
+
+
 
 
 
@@ -13,7 +13,7 @@ from shipcard import shipcard
 NicksDeck = Deck('Nick\'s Badass Mothafuckin Deck',[card_data.cards['Duras'], card_data.cards['Jean Luc Picard'], card_data.cards['Commander'], card_data.cards['Wesley Crusher'],
             card_data.cards['Warp Speed'], card_data.cards['Fire All Weapons'], card_data.cards['Commander'], card_data.cards['William Riker'],card_data.cards['Lieutenant'],card_data.cards['Ensign']])
 
-#
+
 
 
 Basicship= shipcard('Nick\'s Ship', 0, 0 ,0, 8)

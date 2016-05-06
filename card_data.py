@@ -1,8 +1,4 @@
 
-import CardTypes
-print(CardTypes)
-from CardTypes import Card
-print(Card)
 from CardTypes.Card import Card
 #Is there an easier way to import from folders?^^^
 cards = {'Duras': Card('Duras',0, 3, 1, 0, 7, 0, 0, 'You may trash 1 card in your hand or move 1 card from your hand to the top of another player\'s deck.', '"You would dare to insult my father\'s name?"')

@@ -1,4 +1,3 @@
-import random
 from Player import Player
 #making Deck a subclass of Player
 class Deck(Player):
