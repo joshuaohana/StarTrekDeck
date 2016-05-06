@@ -13,10 +13,10 @@ class Hand:
 #TODO make __str__ not as messy when it prints
     def calcstats(self):
         cardstats=[0,0,0,0]
-        cardstats[0] += shipcard.speed
-        cardstats[1] += shipcard.attack
-        cardstats[2] += shipcard.diplomacy
-        cardstats[3] += shipcard.shields
+        cardstats[0] += self.shipcard.speed
+        cardstats[1] += self.shipcard.attack
+        cardstats[2] += self.shipcard.diplomacy
+        cardstats[3] += self.shipcard.shields
         for card in self.currenthand:
             cardstats[0] += card.speed
             cardstats[1] += card.attack
