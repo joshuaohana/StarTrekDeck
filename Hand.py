@@ -12,16 +12,22 @@ class Hand:
             print(card.name)
 #TODO make __str__ not as messy when it prints
     def calcstats(self):
-        cardstats=[0,0,0,0]
-        cardstats[0] += self.shipcard.speed
-        cardstats[1] += self.shipcard.attack
-        cardstats[2] += self.shipcard.diplomacy
-        cardstats[3] += self.shipcard.shields
+        # cardstats=[0,0,0,0]
+        # cardstats[0] += self.shipcard.speed
+        # cardstats[1] += self.shipcard.attack
+        # cardstats[2] += self.shipcard.diplomacy
+        # cardstats[3] += self.shipcard.shields
+        cardstats = {
+            'speed': self.shipcard.speed,
+            'attack': self.shipcard.attack,
+            'diplomacy': self.shipcard.diplomacy,
+            'shields': self.shipcard.shields
+        }
         for card in self.currenthand:
-            cardstats[0] += card.speed
-            cardstats[1] += card.attack
-            cardstats[2] += card.diplomacy
-            cardstats[3] += card.shields
+            cardstats['speed'] += card.speed
+            cardstats['attack'] += card.attack
+            cardstats['diplomacy'] += card.diplomacy
+            cardstats['shields'] += card.shields
         print(cardstats)
 
 #is this no longer relevant? Maybe?
