@@ -5,5 +5,7 @@ class shipcard:
         self.attack = attack
         self.diplomacy = diplomacy
         self.shields = shields
-    # def printshipstats(self):
-    #     print(list[self.stats])
+    #TODO look up how properties work
+    # stats = [self.name, self.speed, self.diplomacy, self.shields]
+    def __str__ (self):
+        print(list[self.stats])

@@ -3,14 +3,21 @@ import card_data
 from Deck import Deck
 from Hand import Hand
 from CardTypes.shipcard import shipcard
-
+from Discardpile import Discardpile
+from Player import Player
 
 NicksDeck = Deck('Nick\'s Badass Mothafuckin Deck',[card_data.cards['Duras'], card_data.cards['Jean Luc Picard'], card_data.cards['Commander'], card_data.cards['Wesley Crusher'],
             card_data.cards['Warp Speed'], card_data.cards['Fire All Weapons'], card_data.cards['Commander'], card_data.cards['William Riker'],card_data.cards['Lieutenant'],card_data.cards['Ensign']])
-
 Basicship= shipcard('Nick\'s Ship', 0, 0 ,0, 8)
-NicksHand= Hand('Nicksfirsthand', NicksDeck, Basicship)
-print(NicksDeck)
+NicksHand= Hand('Nick\'s first hand', NicksDeck, Basicship)
+NicksDiscard = Discardpile(NicksHand)
+PlayerNick = Player('Player Nick', NicksDeck, NicksHand, NicksDiscard, Basicship)
+
+MaxinesDeck = Deck('Maxine's Wooftastic Deck', [card_data.cards['Duras'], card_data.cards['Jean Luc Picard'], card_data.cards['Commander'], card_data.cards['Jean Luc Picard'],
+card_data.cards['Warp Speed'], card_data.cards['Fire All Weapons'], card_data.cards['Commander'], card_data.cards['William Riker'],card_data.cards['Lieutenant'],card_data.cards['Ensign']]))
+
+# NicksDiscard.addhand(None)
+# print(NicksDiscard)
 
 
 #TODO giving me an error, but still doing what im telling it to do

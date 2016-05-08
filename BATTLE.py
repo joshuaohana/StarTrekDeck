@@ -1,1 +1,0 @@
-if Player1.Hand.adds

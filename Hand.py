@@ -1,12 +1,16 @@
-
+from Deck import Deck
 from CardTypes.shipcard import shipcard
-class Hand:
+class Hand(Deck):
     def __init__(self,name, deck, shipcard):
         self.name = name
         self.deck = deck
         self.currenthand = [self.deck.cardlist[0],self.deck.cardlist[1], self.deck.cardlist[2],
                             self.deck.cardlist[3], self.deck.cardlist[4]]
         self.shipcard = shipcard
+#TODO make an instantiation of hand remove top five cards from deck, need to make it work w/ the super
+    def updatedeck(self):
+        if 1==1:
+            del super.self.cardlist[0:4]
     def __str__(self):
         return 'You have {}, {}, {}, {}, and {}'.format(self.currenthand[0].name, self.currenthand[1].name,
                                                     self.currenthand[2].name, self.currenthand[3].name, self.currenthand[4].name)
