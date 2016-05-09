@@ -10,29 +10,24 @@ class Hand(Deck):
 #TODO make an instantiation of hand remove top five cards from deck, need to make it work w/ the super
     def updatedeck(self):
         if 1==1:
-            del super.self.cardlist[0:4]
+            del super.cardlist[0:4]
     def __str__(self):
         return 'You have {}, {}, {}, {}, and {}'.format(self.currenthand[0].name, self.currenthand[1].name,
                                                     self.currenthand[2].name, self.currenthand[3].name, self.currenthand[4].name)
 #TODO make __str__ not as messy when it prints
     def calcstats(self):
-        # cardstats=[0,0,0,0]
-        # cardstats[0] += self.shipcard.speed
-        # cardstats[1] += self.shipcard.attack
-        # cardstats[2] += self.shipcard.diplomacy
-        # cardstats[3] += self.shipcard.shields
         cardstats = {
             'speed': self.shipcard.speed,
             'attack': self.shipcard.attack,
             'diplomacy': self.shipcard.diplomacy,
-            'shields': self.shipcard.shields
-        }
+            'shields': self.shipcard.shields}
+
         for card in self.currenthand:
             cardstats['speed'] += card.speed
             cardstats['attack'] += card.attack
             cardstats['diplomacy'] += card.diplomacy
             cardstats['shields'] += card.shields
-        print(cardstats)
+        return cardstats
 #TODO read some articles on self
 #TODO clean shit up
 #is this no longer relevant? Maybe?

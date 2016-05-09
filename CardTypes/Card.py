@@ -11,3 +11,4 @@ class Card(Deck):
         self.missionpoints = missionpoints
         self.specialeffect = specialeffect
         self.flavortext = flavortext
+
