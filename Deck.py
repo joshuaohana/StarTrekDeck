@@ -1,7 +1,5 @@
 from Player import Player
-#making Deck a subclass of Player
 class Deck(Player):
-    #TODO import battle system from previous project
     def __init__(self, name, cardlist):
         self.name = name
         self.cardlist = cardlist

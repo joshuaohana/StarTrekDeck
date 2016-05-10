@@ -1,4 +1,6 @@
 from Deck import Deck
+import card_data
+from Player import Player
 from CardTypes.shipcard import shipcard
 class Hand(Deck):
     def __init__(self,name, deck, shipcard):
@@ -14,7 +16,6 @@ class Hand(Deck):
     def __str__(self):
         return 'You have {}, {}, {}, {}, and {}'.format(self.currenthand[0].name, self.currenthand[1].name,
                                                     self.currenthand[2].name, self.currenthand[3].name, self.currenthand[4].name)
-#TODO make __str__ not as messy when it prints
     def calcstats(self):
         cardstats = {
             'speed': self.shipcard.speed,
@@ -28,6 +29,35 @@ class Hand(Deck):
             cardstats['diplomacy'] += card.diplomacy
             cardstats['shields'] += card.shields
         return cardstats
+    @staticmethod
+    def battle(player1, player2):
+        p1stats = player1.hand.calcstats()
+        p2stats = player2.hand.calcstats()
+        if p1stats['speed'] > p2stats['speed']:
+            while p1stats['shields'] > 0 and p2stats['shields'] > 0:
+                p2stats['shields'] -= p1stats['attack']
+                if p1stats['shields'] > 0 and p2stats['shields'] > 0:
+                    p1stats['shields'] -= p2stats['attack']
+        elif p2stats['speed'] > p1stats['speed']:
+            while p1stats['shields'] > 0 and p2stats['shields'] > 0:
+                p1stats['shields'] -= p2stats['attack']
+                if p1stats['shields'] > 0 and p2stats['shields'] > 0:
+                    p1stats['shields'] -= p2stats['attack']
+        elif p2stats['speed'] == p1stats['speed']:
+            while p1stats['shields'] > 0 and p2stats['shields'] > 0:
+                p2stats['shields'] -= p1stats['attack']
+                p1stats['shields'] -= p2stats['attack']
+        if p1stats['shields'] <= 0 and p2stats['shields'] <= 0:
+            player2.currenthand.append(card_data.cards['Ensign'])
+            player1.currenthand.append(card_data.cards['Ensign'])
+            print('Both Players Lose. Womp.')
+        if p1stats['shields'] <= 0:
+            player1.hand.currenthand.append(card_data.cards['Ensign'])
+            print('{} wins! {} can suck a dick and take an Ensign!'.format(player2.playername, player1.playername))
+        if p2stats['shields'] <= 0:
+            player2.hand.currenthand.append(card_data.cards['Ensign'])
+            print('{} wins! {} can take a Ensign and fuck outta here!'.format(player1.playername, player2,playername))
+
 #TODO read some articles on self
 #TODO clean shit up
 #is this no longer relevant? Maybe?
@@ -51,7 +81,8 @@ class Hand(Deck):
     def trashcard(self, card_name, **args):
         deleted_count = 0
         for idx, card in enumerate(self.cardlist):
-            if args.get('count') is not 'all' and deleted_count >= args.get('count'): break
+            if args.get('count') is not 'all' and deleted_count >= args.get('count'):
+                break
             if card.name is card_name:
                 self.allcards.pop(idx)
                 deleted_count += 1
