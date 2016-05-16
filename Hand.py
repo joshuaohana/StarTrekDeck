@@ -1,14 +1,13 @@
-from Deck import Deck
-import card_data
+
 from Player import Player
 from CardTypes.shipcard import shipcard
+from Deck import Deck
 class Hand(Deck):
-    def __init__(self,name, deck, shipcard):
+    def __init__(self,name):
         self.name = name
-        self.deck = deck
         self.currenthand = [self.deck.cardlist[0],self.deck.cardlist[1], self.deck.cardlist[2],
                             self.deck.cardlist[3], self.deck.cardlist[4]]
-        self.shipcard = shipcard
+
 #TODO make an instantiation of hand remove top five cards from deck, need to make it work w/ the super
     def updatedeck(self):
         if 1==1:

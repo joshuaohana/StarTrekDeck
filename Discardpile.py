@@ -8,7 +8,7 @@ class Discardpile:
     def shuffleintodeck(self):
         Deck.cardlist = Discardpile.currentdiscard
         Discardpile.currentdiscard = []
-    def addhand(self, nexthand):
+    def discardhand(self):
         numberofhands = 0
         if numberofhands == 0:
             self.currentdiscard = self.hand
